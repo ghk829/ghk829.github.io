@@ -27,7 +27,7 @@ sass:
 # Comments
 disqus_shortname:   taylantatli
 
-# Social
+## Social
 # if you don't have any of social below, comment the line.
 #google:
   #plus:            #username
@@ -37,19 +37,19 @@ disqus_shortname:   taylantatli
   #ad-slot:
 #bing-verify:
 #email:
-twitter:            username
-facebook:           username
-github-url:         username
+#twitter:            username
+#facebook:           username
+#github-url:         username
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 #linkedin:          username
 #xing:              username
-instagram:          username
+#instagram:          username
 #lastfm:            username
 #tumblr:            username
 #medium:            '@username'
 #pinterest:         username
 #foursquare:        username
-steam:              username
+#steam:              username
 #dribbble:          username
 #youtube:           username
 #youtube-channel:   channel
@@ -60,6 +60,11 @@ steam:              username
 #keybase:           username
 #xmpp:              username@server.com
 #hackernews:        username
+
+## Language
+java : advanced
+python : advanced
+
 
 # Gems
 gems:
