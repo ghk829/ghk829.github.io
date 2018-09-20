@@ -1,37 +1,30 @@
 ---
 layout: page
-title: About the Theme
+title: Who is Ki?
 tags: [about, Jekyll, theme, moon]
-date: 2016-03-21
+date: 2018-09-21
 comments: false
 ---
     
-<center><a href="http://taylantatli.github.io/Moon"><b>Moon</b></a> is a minimal, one column jekyll theme.</center>
+<center><h2>The best man</h2></center>
 
-## Features
-* Minimal, you can focus on your content
-* Responsive
-* Disqus integration
-* Syntax highlighting
-* Optional post image
-* Social icons
-* Page for sharing projects
-* Optional background image
-* Simple navigation menu
-* MathJax support
+## Game
+* The legend of Zelda, The Breath of The Wild
+* Mario Odessay
+* Hollow Night
+* FIFA 18, difficulty : Legend
+* Startcraft 1
+* Uncharted 4
 
-## Preview
+## Language
+<h3 class="title" style="font-size:30px;">
+{% if site.java %}<i class="devicon-java-plain" style="margin-left:20px;"></i>{% endif %}
+{% if site.python %}<i class="devicon-python-plain" style="margin-left:20px;"></i>{% endif %}
+{% if site.javascript %}<i class="devicon-javascript-plain" style="margin-left:20px;"></i>{% endif %}
+{% if site.cplusplus %}<i class="devicon-cplusplus-plain" style="margin-left:20px;"></i>{% endif %}
+</h3>
 
-{% capture images %}
-    https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png
-    https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png
-{% endcapture %}
-{% include gallery images=images caption="Screenshots of Moon Theme" cols=2 %}
-
-See a [live version of Moon](http://taylantatli.github.io/Moon) hosted on GitHub.
-
-## Getting Started
-
-To learn how to install and use this theme check out the [Setup Guide](http://taylantatli.me/Moon/moon-theme/) for more information.
-      
-[Install Moon](https://github.com/TaylanTatli/Moon){: .btn}
+## Movie
+* The Dark Knight
+* How I Met Your Mother
+* Oh, Captain, My Captain! 
