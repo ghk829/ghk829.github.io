@@ -28,3 +28,11 @@ comments: false
 * The Dark Knight
 * How I Met Your Mother
 * Oh, Captain, My Captain! 
+
+```mermaid
+
+graph LR
+A((VueJs)) -- REST --> B((NodeJs))
+B --> C(MariaDB/MongoDB)
+
+```
