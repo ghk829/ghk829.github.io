@@ -6,6 +6,25 @@
     <script src="{{ site.url }}/assets/js/jquery.fitvid.min.js"></script>
     <script src="{{ site.url }}/assets/js/scripts.js"></script>
 	<script src="{{ site.url }}/assets/mermaid-7.0.0/dist/mermaid.min.js"></script>
+	<script>
+	let path = null
+
+	setInterval(() => {
+	  if (path !== window.location.pathname) {
+		path = window.location.pathname
+		document.querySelectorAll('.lang-mermaid').forEach(node => {
+		  const newNode = node.cloneNode(true)
+		  newNode.removeAttribute('class')
+		  const hr = document.createElement('hr')
+		  node.parentNode.insertBefore(hr, node)
+		  node.parentNode.insertBefore(newNode, hr)
+		})
+		window.mermaid.initialize({ theme: 'default' })
+		window.mermaid.init(undefined, document.querySelectorAll('.lang-mermaid'))
+	  }
+	}, 1000)
+
+	</script>
     {% if site.google.analytics %}
     <!-- Asynchronous Google Analytics snippet -->
     <script>
