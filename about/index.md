@@ -38,11 +38,6 @@ B --> C(MariaDB/MongoDB)
 ```
 <script>
 setTimeout(function() { 
-console.log(20);
-}, 2000)
-</script>
-<script>
-setTimeout(function() { 
 		$(function(){
         var element = document.querySelector(".language-mermaid");
 
@@ -53,5 +48,5 @@ setTimeout(function() {
         var graphDefinition = element.textContent;
         var graph = mermaid.mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
     });
-}, 3000)
+}, 1500)
 </script>
