@@ -38,7 +38,6 @@ B --> C(MariaDB/MongoDB)
 ```
 <script>
 $(function(){
-        // Example of using the API
         var element = document.querySelector(".language-mermaid");
 
         var insertSvg = function(svgCode, bindFunctions){
