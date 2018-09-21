@@ -29,14 +29,6 @@ comments: false
 * How I Met Your Mother
 * Oh, Captain, My Captain! 
 
-{% mermaid %}
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-{% endmermaid %}
-
 ```mermaid
 
 graph LR
@@ -44,3 +36,16 @@ A((VueJs)) -- REST --> B((NodeJs))
 B --> C(MariaDB/MongoDB)
 
 ```
+<script>
+$(function(){
+        // Example of using the API
+        var element = document.querySelector(".language-mermaid");
+
+        var insertSvg = function(svgCode, bindFunctions){
+            element.innerHTML = svgCode;
+        };
+
+        var graphDefinition = element.textContent;
+        var graph = mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
+    });
+</script>
