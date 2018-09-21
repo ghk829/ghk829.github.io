@@ -43,7 +43,7 @@ console.log(20);
 </script>
 <script>
 setTimeout(function() { 
-$(function(){
+		$(function(){
         var element = document.querySelector(".language-mermaid");
 
         var insertSvg = function(svgCode, bindFunctions){
@@ -51,7 +51,7 @@ $(function(){
         };
 
         var graphDefinition = element.textContent;
-        var graph = mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
+        var graph = mermaid.mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
     });
 }, 3000)
 </script>
