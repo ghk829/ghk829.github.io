@@ -5,7 +5,7 @@ tags: [about, Jekyll, theme, moon]
 date: 2018-09-21
 comments: false
 ---
-<script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/"></script>    
+    
 <center><h2>The best man</h2></center>
 
 ## Game
@@ -28,6 +28,14 @@ comments: false
 * The Dark Knight
 * How I Met Your Mother
 * Oh, Captain, My Captain! 
+
+{% mermaid %}
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+{% endmermaid %}
 
 ```mermaid
 
