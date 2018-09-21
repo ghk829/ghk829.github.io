@@ -5,22 +5,8 @@
     <script src="{{ site.url }}/assets/js/jquery.magnific-popup.min.js"></script>
     <script src="{{ site.url }}/assets/js/jquery.fitvid.min.js"></script>
     <script src="{{ site.url }}/assets/js/scripts.js"></script>
-	<script src="{{ site.url }}/assets/mermaid-7.0.0/dist/mermaid.min.js"></script>
-	<script>mermaid.initialize({startOnLoad:false,cloneCssStyles:false});</script>
-	<script>
-	setInterval(function(){
-	$(function(){
-        var element = document.querySelector(".language-mermaid");
-
-        var insertSvg = function(svgCode, bindFunctions){
-            element.innerHTML = svgCode;
-        };
-
-        var graphDefinition = element.textContent;
-        var graph = mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
-    });
-	},2000)
-	</script>
+	<script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/"></script>
+	<script>mermaid.initialize({startOnLoad:false});</script>
     {% if site.google.analytics %}
     <!-- Asynchronous Google Analytics snippet -->
     <script>
