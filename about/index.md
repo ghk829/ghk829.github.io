@@ -5,7 +5,7 @@ tags: [about, Jekyll, theme, moon]
 date: 2018-09-21
 comments: false
 ---
-    
+<script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/"></script>    
 <center><h2>The best man</h2></center>
 
 ## Game
