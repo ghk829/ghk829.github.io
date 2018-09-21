@@ -72,7 +72,6 @@ mermaid:
   src: 'assets/mermaid-7.0.0/src/mermaid.js'
 # Gems
 gems:
-  [jekyll-mermaid]
   - jekyll-mentions
   - jekyll-feed
   - jekyll-sitemap
