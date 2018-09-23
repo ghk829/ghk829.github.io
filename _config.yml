@@ -62,6 +62,7 @@ disqus_shortname:   taylantatli
 #hackernews:        username
 
 ## Language
+lanHead:            'Languages'
 java : advanced
 python : advanced
 javascript : medium
