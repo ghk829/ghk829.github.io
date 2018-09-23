@@ -32,8 +32,8 @@ comments: false
 ```mermaid
 
 graph LR
-A((VueJs)) -- REST --> B((NodeJs))
-B --> C(MariaDB/MongoDB)
+A((KH)) -- 집착 --> B((JL))
+B -- 노관심 --> A
 
 ```
 <script>
