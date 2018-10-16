@@ -29,3 +29,25 @@ comments: false
 * The Dark Knight
 * How I Met Your Mother
 * Oh, Captain, My Captain! 
+
+```mermaid
+
+graph LR
+A((KH)) -- 집착 --> B((JL))
+B -- 노관심 --> A
+
+```
+<script>
+setTimeout(function() { 
+		$(function(){
+        var element = document.querySelector(".language-mermaid");
+
+        var insertSvg = function(svgCode, bindFunctions){
+            element.innerHTML = svgCode;
+        };
+
+        var graphDefinition = element.textContent;
+        var graph = mermaid.mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
+    });
+}, 1500)
+</script>
