@@ -15,6 +15,7 @@ comments: false
 * FIFA 18, difficulty : Legend
 * Startcraft 1
 * Uncharted 4
+* Last of us
 
 ## Language
 <h3 class="title" style="font-size:30px;">
