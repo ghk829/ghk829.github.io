@@ -8,14 +8,15 @@ comments: false
     
 <center><h2>The best man</h2></center>
 
-## Game
+## Games
 * The legend of Zelda, The Breath of The Wild
 * Mario Odessay
 * Hollow Night
 * FIFA 18, difficulty : Legend
 * Startcraft 1
 * Uncharted 4
-* Last of us
+* The Last of Us
+* God of War 4
 
 ## Language
 <h3 class="title" style="font-size:30px;">
@@ -30,13 +31,6 @@ comments: false
 * How I Met Your Mother
 * Oh, Captain, My Captain! 
 
-```mermaid
-
-graph LR
-A((KH)) -- 집착 --> B((JL))
-B -- 노관심 --> A
-
-```
 <script>
 setTimeout(function() { 
 		$(function(){
