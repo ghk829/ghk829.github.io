@@ -8,16 +8,18 @@ comments: false
     
 <center><h2>The best man</h2></center>
 
-## Games
+## Favoriate Games
 * The legend of Zelda, The Breath of The Wild
 * Mario Odessay
 * Hollow Night
 * FIFA 18, difficulty : Legend
+* PES 2019, PSG neymar is the best !!
 * Startcraft 1
 * Uncharted 4
 * The Last of Us
 * God of War 4
-
+* Dark Soul ...
+* Splatoon 2
 ## Language
 <h3 class="title" style="font-size:30px;">
 {% if site.java %}<i class="devicon-java-plain" style="margin-left:20px;"></i>{% endif %}
