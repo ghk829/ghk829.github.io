@@ -47,7 +47,11 @@ the code could like below :
 
 
 ``` python
-
+# Trying to terminate the process
+proc.terminate()
+proc.join()
+# release all the source of the queue
+out_q.close()
 
 ```
 
@@ -59,6 +63,14 @@ So, I think the below code can solve this problem  :
 
 ``` python
 
+
+while proc.is_alive() and out_q.qsize() == 0 :
+    try:
+      result = out_q.get(timeout=1)
+      if result !=None:
+          break;
+    except queue.Empty as e:
+      pass
 
 ```
 
