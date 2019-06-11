@@ -67,3 +67,19 @@ H2O JVM --> Python Object (process 2)
 ```
 
 위와 같은 형식으로 데이터를 복원하였다.
+
+
+<script>
+setTimeout(function() {
+		$(function(){
+        var element = document.querySelector(".language-mermaid");
+
+        var insertSvg = function(svgCode, bindFunctions){
+            element.innerHTML = svgCode;
+        };
+
+        var graphDefinition = element.textContent;
+        var graph = mermaid.mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
+    });
+}, 1500)
+</script>
