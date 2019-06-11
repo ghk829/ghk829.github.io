@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  ""
+title:  "manager & serialization"
 date:   2019-01-03
 excerpt: "Mutlprocess Manager"
 tag:
@@ -9,7 +9,7 @@ tag:
 - Spring boot
 comments: false
 ---
-### Multi-process in python Part 2 : * manager 작동 원리 및 serialization 문제*
+### Multi-process in python Part 2 : * manager 작동 원리 및 serialization 문제 *
 
 프로세스끼리 데이터를 주고받기 위한 방법은 다음과 같다
 
