@@ -14,7 +14,7 @@ comments: false
 
 * backend 개발자로 참가하였는데, 비록 수상은 못 했지만 너무 소중한 추억이었다
 
-<a href="https://github.com/samslow/GlassLetter-Front">Glass Letter</a>
+  이거슨 링크 : <a href="https://github.com/samslow/GlassLetter-Front">Glass Letter</a>
 
 
 * AWS amplify가 front 개발자를 위한 툴인데, boto3로 s3 연동하는 것과 MongoDB로 데이터를 관리하는 측면에서는 내 역할이 돋보였던 것 같다.
