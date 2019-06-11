@@ -62,9 +62,9 @@ JVM에 올라오는 객체 ID를 참조하여
 ``` mermaid
 graph LR
 
-PyObject --> H2OJVM
+process1_object --> H2OJVM
 
-H2OJVM --> PyObject(process2)
+H2OJVM --> process2_object
 
 ```
 
