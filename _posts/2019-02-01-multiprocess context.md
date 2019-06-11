@@ -60,6 +60,8 @@ multiprocessing간의 통신은 socket으로 이루어지기 때문에 binary �
 JVM에 올라오는 객체 ID를 참조하여
 
 ``` mermaid
+graph LR
+
 PyObject --> H2OJVM
 
 H2OJVM --> PyObject(process2)
