@@ -3,7 +3,7 @@ layout: post
 title:  "IBM DevOps 교육"
 date:   2019-06-19
 excerpt: "IBM DevOps meetup"
-project: true
+project: false
 tag:
 - kubernetes
 - devops
