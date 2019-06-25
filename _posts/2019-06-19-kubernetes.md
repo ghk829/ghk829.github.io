@@ -3,7 +3,6 @@ layout: post
 title:  "IBM DevOps study"
 date:   2019-06-19
 excerpt: "IBM DevOps meetup"
-project: false
 tag:
 - kubernetes
 - devops
