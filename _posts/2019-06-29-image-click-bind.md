@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "expo study"
-date:   2019-06-28
+date:   2019-06-29
 excerpt: "react expo"
 tag:
 - react
