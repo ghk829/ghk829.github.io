@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "expo study"
+title:  "react image click event"
 date:   2019-06-29
-excerpt: "react expo"
+excerpt: "react image click event"
 tag:
 - react
 - javascript
