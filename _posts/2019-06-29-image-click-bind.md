@@ -5,8 +5,7 @@ date:   2019-06-28
 excerpt: "react expo"
 tag:
 - react
-- react-native
-- expo
+- javascript
 
 comments: false
 ---
