@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "react image click event"
+title:  "ubuntu community"
 date:   2019-06-29
-excerpt: "react image click event"
+excerpt: "ubuntu community"
 tag:
 - ubuntu
-- javascript
+- social
 
 comments: false
 ---
