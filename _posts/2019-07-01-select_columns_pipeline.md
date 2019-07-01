@@ -1,22 +1,36 @@
 ---
 layout: post
-title:  "react toggle event"
-date:   2019-06-30
-excerpt: "react toggle event"
+title:  "sklearn FunctionTransformer"
+date:   2019-07-01
+excerpt: "sklearn FunctionTransformer"
 tag:
-- react
-- javascript
+- python
+- sklearn
 
 comments: false
 ---
+
+# Pipeline
+
+scikit-learn에서 pipeline은 엄청 중요한 역할을 한다.
+
+GridSearchCV의 핵심이며, pipeline을 통해 search할 범위의 set을 손쉽게 control이 가능하다.
+
+맨날 이용하다가 scikit-learn에서 몇 컬럼들만 추출하여 작업하는 경우가 많았고,
+이러한 기능이 있을 거 같아서 찾아보았다.
+
+## FunctionTransformer
+
+위 function을 통해서 생각하는 코드를 구현할 수 있다.
+
+물론, partial function을 이용하면, pipeline을 구성할 때 원하는 컬럼을 사용자 정의에 맞게 구성이 가능하다
+
+
 ``` python
 
 from sklearn.pipeline import make_union, make_pipeline
 from sklearn.preprocessing import FunctionTransformer,MinMaxScaler
 from functools import partial
-
-def _select_columns(dataframe,columns):
-        return dataframe[columns]
 
 def select_columns(dataframe=None,columns=[]):
     from functools import partial
@@ -25,104 +39,59 @@ def select_columns(dataframe=None,columns=[]):
         return dataframe[columns]
 
     return partial(_select_columns,columns=columns)
+
 vec = FunctionTransformer(select_columns(columns=["admit","gre"]), validate=False)
 
 ```
-# toggle css 처리
 
-어떤 앱을 이용하다가 UI에서 클릭하면 디테일이 나올 줄 알았는데
-나오지 않아서 실망했다.
-이미지 등 디테일 항목을 보고 싶을 떄 toggle event로 p tag를 보여주면 좋겠다고 생각했다.
-
-``` javascript
+> 전체 코드
 
 
-import React from 'react';
-import './arrow.css';
-const arrow = require("./down-arrow.svg")
+``` python
 
+from sklearn.pipeline import make_union, make_pipeline
 
-export default class Arrow extends React.Component{
+from sklearn.preprocessing import FunctionTransformer
 
-  constructor(props){
-    super(props);
+def select_columns(dataframe=None,columns=[]):
+    from functools import partial
 
-    this.state = {
-      active: false
-    }
+    def _select_columns(dataframe,columns):
+        return dataframe[columns]
 
-    this.toggleClass = this.toggleClass.bind(this); // bind 해줘야 this 활용가능
+    return partial(_select_columns,columns=columns)
 
-  }
-
-  toggleClass() {
-        const currentState = this.state.active;
-        this.setState({ active: !currentState });
-    };
-
- render(){
-   return(
-
-            <div onClick={this.toggleClass} >
-
-            <img src={arrow} className={this.state.active ? 'arrow-click': 'arrow-nonclick'}  alt="arrow"/>
-
-            <p className={this.state.active ? 'p-click': 'p-nonclick'}>{this.props.text}</p>
-
-            </div>
-
-   )
-
-
- }
-}
-
-
-
+vec = FunctionTransformer(select_columns(columns=["admit","gre"]), validate=False)
 
 ```
 
-일단 먼저 해당 기능을 컴퍼넌트화시켰는데, 이유는 arrow 이미지가 toggle 함에 따라 90 정도 회전되어야 하는 것도 있지만, 글자가 안 보이다가 보여야 하는 효과도 있어야 하기 때문이다.
+> partial function을 이용해 return은 function이다 따라서, callable하기 때문에
+>
+> pipeline을 구성하기 위한 line이 된다.
+``` python
 
-이는 **state**를 활용하면 좋다.
+def select_columns(dataframe=None,columns=[]):
+    from functools import partial
 
-처음에는 **refs**를 활용해야겠다고 생각했는데, 같은 컴퍼넌트에서 똑같은 이벤트로 인해 바뀌면 돼서 **state**로 처리했다.
+    def _select_columns(dataframe,columns):
+        return dataframe[columns]
 
-
-``` javascript
-
- // 단순히 toggle 체크하는 state
-
-
-  toggleClass() {
-        const currentState = this.state.active;
-        this.setState({ active: !currentState });
-    };
-
+    return partial(_select_columns,columns=columns)
 
 ```
 
+> 아래 코드는 kwargs를 통하여 columns를 지정하므로 make_pipeline 이나
+>
+> ``` python
+> from sklearn.model_selections import Pipeline
+> ```
+> 의 Pipeline에서 contructor 부분에서 호출할 때도 단순히 변수 자체를 넣어주면 된다.
 
+``` python
 
-``` javascript
+from sklearn.preprocessing import FunctionTransformer
 
-  // className을 조건식으로 하면 해당 css effect를 쉽게 처리할 수 있다.
-  // 물론 p 태그나 arrow 태그처럼 일반화된 태그에 대해 바로 css를 먹이는 건...ㅎㅎ
-
-   <div onClick={this.toggleClass} >
-
-    <img src={arrow} className={this.state.active ? 'arrow': 'arrow.click'}  alt="arrow"/>
-
-    <p className={this.state.active ? 'p': 'p.click'}>{this.props.text}</p>
-
-    </div>
-
+vec = FunctionTransformer(select_columns(columns=["admit","gre"]), validate=False)
 
 
 ```
-
-
-# Sample
-
-
-<iframe height="400px" width="100%" src="https://repl.it/@ghk829/reacttutorial?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
