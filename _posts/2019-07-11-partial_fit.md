@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Object Importance"
-date:   2019-07-02
-excerpt: "Object Importance"
+title:  "partial fit"
+date:   2019-07-11
+excerpt: "partial fit"
 tag:
 - python
 - machine learning
@@ -10,81 +10,83 @@ tag:
 comments: false
 ---
 
-# Ensemble
+# Partial Fit
 
-DRF, xgboost, lightgbm, catboost 등은 트리를 이용한 ensemble 모델들이다.
-
-이들 모델들은 kaggle이나 현업에서 가장 많이 쓰이는 모델이다.
-
-그러나, 위 모델을 쓰는 것도 중요하지만 ensemble 모델이기에 해석이 어려웠고,
-
-머신러닝 해석에 대한 연구가 많이 이뤄지게 됐다.
+partial fit이 필요하게 된 배경과 partial fit을 통해 얻을 수 있는 장점에 대해 이야기하고자 한다.
 
 
-## Machine Learning Interbility
+## Fitting Algorithms
 
-머신러닝 모델, 특히 위의 언급한 모델들을 해석하기 위한 기법이 4개 정도가 있다.
+Linear Regression, SVM 등 일반적인 선형 알고리즘이나
 
-1. feature importance
-2. shap , lime 등 mli 기법
-3. object importance
-4. feature plotting
+Logistic Regression, SVC와 같은 간단한 분류모형의 경우
 
+메모리를 그렇게 많이 잡아먹진 않지만, 데이터 수가 많아지면 당연히 필요한 메모리는 증가한다.
 
-그 중에서 object importance에 대해 정리하고자 한다.
+정말 많은 데이터를 학습시키기 위하여 할 수 있는 조치는 3가지이다.
 
+1. 서버 용량을 증설하기
+2. 모델의 trainset을 batch화시키기
+3. 용량을 적게 만드는 알고리즘을 개발하기...ㅎㅎ
 
-## Object Importance
+tensorflow와 같은 딥러닝 프레임워크의 경우 일반적으로 코딩에서 mini-batch화하는게 코딩에 배기지만, ML의 경우 이러한 코딩을 잘 하지 않는 경우가 대부분이며, 빅데이터를 위해 보통의 경우 서버 용량을 증설시키거나 spark와 같은 분산처리 라이브러리를 활용헌다.
 
-Object Importance는 trainset으로부터 test or valid set의 optimized metric에 대한 영향도를 측정하는 것이다.
+## Mini-batch
 
-[object_importance](https://arxiv.org/pdf/1802.06640.pdf)
+딥러닝의 경우 mini-batch화시키는 경우가 대부분이며, 그중에서 제일 많이 쓰는 optimize 방법론 중 하나가 **SGD**이다.
 
-링크에 실린 논문에서 자세한 내용을 알 수 있다.
-
-## catboost에서 활용방법
-
+이를 scikit-learn에서도 사용이 가능하며 데이터를 배치화시킬 수 있다.
 
 ``` python
 
-from catboost import CatBoost
+from sklearn.linear_model import SGDClassifier
 
-model = CatBoost(...,loss_function='RMSE')
-model.fit(train_pool)
+clf = SGDClassifier(**parameters)
 
-incides, scores = model.get_object_importance(
-    validation_pool_sampled,
-    train_pool_noisy,
-    type = "Average",
-    importance_values_sign='Positive'
-)
+for X,y in zip(X_train_fold,y_train_fold):
+    clf.partial_fit(X,y)
 
 ```
-코드는 위와 같이 사용하면 된다.
 
-그런데, scores는 무엇을 의미하는 것일까?
-간단하게 설명하자면, train set으로부터 valid set를 통해 측정한 optimized metric : RMSE에 대한 object importance 측정값이다.
-> type : Average 이므로 valid set의 scores의 평균이다.
+> SGD 모델이 지원하는 모델의 항목의 리스트는 아래에 있다.
+>
+> [SGD](https://scikit-learn.org/stable/modules/sgd.html)
 
-## 해석하는 방법
 
-![image](../assets/img/object_importance.png)
+이외의 모델은?
 
-어려울 수 있지만, 해석하는 건 간단하다.
-식을 통해 유추할 수 있듯이
-> RMSE와 같이 작으면 좋은 metric에 대해선 양의 기울기를 갖고있으면 *성능이 안 좋아진다*는 의미이기 때문에 모델성능에 악영향을 끼치는 것
-> 
-> 역으로 음수영향을 끼친 다는 것는 성능이 좋아진다는 것이다.
-> 
-> 즉, importance_values_sign에서 positive로 return받는 값들은 모델에 영향을 안 좋게 끼치는 **데이터**들이다.  catboost에서는 sort한 후 return한다.
+Ensemble 모델의 경우 scitkit-learn에서 partial_fit을 지원하는 모델은 현재 없다.
 
-## 결론,
+[IncremetalTrees](https://github.com/garethjns/IncrementalTrees)
 
-위의 코드를 통해 train set에서 어떤 데이터가 모델에 안 좋은 영향을 끼치는 지 알 수 있고,
-위의 데이터에 대해 더 깊이 고찰하고 분석한다면 더 좋은 모델링을 기대할 수 있는 것이다(해당 데이터들을 어느 정도 제외하면 좋은 성능이 나올 것이라 기대할 수 있다.)
+위와 같은 패키지가 지원을 한다. SparkML에서 지원하는 알고리즘 정도는 대세 라이브러리
+dask로 지원하는 정도인 거 같다.
 
-# Sample
+이와 더불어 ensemble모델의 초기화 부분에서 warm_start 옵션이 있는데 이는 사실 partial_fit과는 다르지만, parameter 조정, 트리 수의 확장 등을 지원한다.
 
-아래 링크의 예제를 통해 공부할 수 있다.
+doc에 있는 상세내용이다.
+```
+When set to True, reuse the solution of the previous call to fit and add more estimators to the ensemble, otherwise, just fit a whole new forest.
 
-[notebook](https://github.com/catboost/tutorials/blob/master/model_analysis/object_importance_tutorial.ipynb)
+```
+실제 로직이다.
+
+https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/ensemble/forest.py#L291
+
+``` python
+
+# Parallel loop: we use the threading backend as the Cython code
+            # for fitting the trees is internally releasing the Python GIL
+            # making threading always more efficient than multiprocessing in
+            # that case.
+            trees = Parallel(n_jobs=self.n_jobs, verbose=self.verbose,
+                             backend="threading")(
+                delayed(_parallel_build_trees)(
+                    t, self, X, y, sample_weight, i, len(trees),
+                    verbose=self.verbose, class_weight=self.class_weight)
+                for i, t in enumerate(trees))
+
+            # Collect newly grown trees
+            self.estimators_.extend(trees)
+
+```
