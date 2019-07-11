@@ -66,7 +66,10 @@ dask로 지원하는 정도인 거 같다.
 
 doc에 있는 상세내용이다.
 ```
-When set to True, reuse the solution of the previous call to fit and add more estimators to the ensemble, otherwise, just fit a whole new forest.
+When set to True, 
+reuse the solution of the previous call to fit 
+and add more estimators to the ensemble, 
+otherwise, just fit a whole new forest.
 
 ```
 실제 로직이다.
