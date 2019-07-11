@@ -6,7 +6,7 @@ excerpt: "partial fit"
 tag:
 - python
 - machine learning
-- 
+- sklearn
 comments: false
 ---
 
