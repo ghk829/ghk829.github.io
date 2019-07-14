@@ -22,8 +22,4 @@ comments: false
 * Oh, Captain, My Captain!
 
 ## Social
-  {% if site.github-url %}
-                        <h3>
-                        <a href="http://github.com/{{ site.github-url }}" target="_blank" rel="noopener noreferrer"><i class="devicon-github-plain" style="margin-left:20px;"></i></a>
-                        </h3>
-                    {% endif %}
+<h3><a href="http://github.com/{{ site.github-url }}" target="_blank" rel="noopener noreferrer"><i class="devicon-github-plain" style="margin-left:20px;"></i></a></h3>
