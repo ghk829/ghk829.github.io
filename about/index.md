@@ -21,6 +21,6 @@ comments: false
 * How I Met Your Mother
 * Oh, Captain, My Captain!
 
- {% if site.github-url %}<li>
-                        <a href="http://github.com/{{ site.github-url }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-github"></i> Github</a>
-                    </li>{% endif %}
+ {% if site.github-url %}
+                        <a href="http://github.com/{{ site.github-url }}" target="_blank" rel="noopener noreferrer"><i class="devicon-github-plain"></i></a>
+                    {% endif %}
