@@ -22,7 +22,7 @@ comments: false
 * Oh, Captain, My Captain!
 
 
- <h3 class="title" style="font-size:30px;>
+ <h3 class="title" style="font-size:30px;">
   {% if site.github-url %}
                         <a href="http://github.com/{{ site.github-url }}" target="_blank" rel="noopener noreferrer"><i class="devicon-github-plain" style="margin-left:20px;"></i></a>
                     {% endif %}
