@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ULMFiT""
+title:  "ULMFiT"
 date:   2019-11-29
 excerpt: "Universal Language Model"
 tag:
