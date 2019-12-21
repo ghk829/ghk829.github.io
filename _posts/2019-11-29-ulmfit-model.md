@@ -10,11 +10,17 @@ tag:
 comments: false
 ---
 
-# UlMFit의 위엄
+# UlMFit의 효과
 
 기존에 CV쪽에서는 Transfer Learnin을 많이 하고, NLP에서는 사실 프로젝트마다 모델을 처음부터 만들었었다. from scratch로 하게 되는 경우 시간도 많이 소요될 뿐더러 재활용도 불가능하다.
 
 공부하면서 가장 중요한 것만 간단히 요약하고자 한다.
+
+## 발표자료
+
+논문스터디에서 같이 스터디했던 지현님께서 모델에 대해서 정리하여 발표하셨다.
+
+[ULMFit](https://www.youtube.com/watch?v=ZJKtwX2LSbY&feature=share)
 
 ## Discriminative fine-tuning
 
