@@ -10,9 +10,9 @@ comments: false
 
 ## Language
 <h3 class="title" style="font-size:30px;">
-{% if site.java %}<i class="devicon-java-plain" style="margin-left:20px;"></i>{% endif %}
-{% if site.python %}<i class="devicon-python-plain" style="margin-left:20px;"></i>{% endif %}
-{% if site.javascript %}<i class="devicon-javascript-plain" style="margin-left:20px;"></i>{% endif %}
+<i class="devicon-python-plain" style="margin-left:20px;"></i>
+<i class="devicon-javascript-plain" style="margin-left:20px;"></i>
+<i class="devicon-go-plain" style="margin-left:20px;"></i>
 {% if site.cplusplus %}<i class="devicon-cplusplus-plain" style="margin-left:20px;"></i>{% endif %}
 {% if site.go %}<i class="devicon-go-plain" style="margin-left:20px;"></i>{% endif %}
 </h3>
