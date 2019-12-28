@@ -64,10 +64,9 @@ github-url:         ghk829
 
 ## Language
 lanHead:            'Languages'
-java : advanced
 python : advanced
 javascript : medium
-cplusplus : medium
+go : medium
 
 ## mermaid
 mermaid:

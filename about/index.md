@@ -14,6 +14,7 @@ comments: false
 {% if site.python %}<i class="devicon-python-plain" style="margin-left:20px;"></i>{% endif %}
 {% if site.javascript %}<i class="devicon-javascript-plain" style="margin-left:20px;"></i>{% endif %}
 {% if site.cplusplus %}<i class="devicon-cplusplus-plain" style="margin-left:20px;"></i>{% endif %}
+{% if site.go %}<i class="devicon-go-plain" style="margin-left:20px;"></i>{% endif %}
 </h3>
 
 ## Movie
