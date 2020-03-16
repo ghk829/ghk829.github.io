@@ -17,19 +17,28 @@ comments: false
   
 트립스토어에서 담당한 역할은 다음과 같다.  
   
-1. 데이터 소싱  
-  
-2. Data-Engineer
+1. Data-Scientist
 
+2. 데이터 소싱  
+  
+3. Data-Engineer
+ 
 여기서 쓰이는 기술스펙은 다음과 같다
 
 - Python
+- Pytorch
+- Tensorflow
+- GraphDB
+- Dataiku
+- Scikit-Learn
+- Pandas
 - Airflow
 - Django
 - Electron(with Vue)
 - MongoDB
 - Elastic Search
 - Redis
+- BigQuery
 - AWS Services
 -- Lambda
 -- Athena / Glue
