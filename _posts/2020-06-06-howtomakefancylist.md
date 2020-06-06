@@ -73,7 +73,7 @@ Redis에 대한 조작은 다음 포스팅을 통해서 이야기하고자 한�
 3. 다 보면 어떡해요?
 > 완료되는 시점에 다시 쌓아줍니다.
 
-![](https://www.pngjoy.com/pngm/272/5202376_cycle-icon-lifecycle-icon-transparent-png.png)
+<img src="https://www.pngjoy.com/pngm/272/5202376_cycle-icon-lifecycle-icon-transparent-png.png" alt="drawing" width=300 />
 
 
 
