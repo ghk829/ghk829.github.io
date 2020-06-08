@@ -13,7 +13,7 @@ comments: false
 # 장갑을 낀 운전자 오류
 
 ![cycle icon 이미지 검색결과](https://img.buzzfeed.com/buzzfeed-static/static/2013-09/enhanced/webdr03/23/21/enhanced-buzz-16699-1379984679-15.jpg)
-내 인생 영화 how i met your mother에서 테드가 장갑을 끼고 운전하는 장면 ㅎㅎ
+내 인생 미드 how i met your mother에서 테드가 장갑을 끼고 운전하는 장면 ㅎㅎ
 
 어떤 통계학자가 교통사고 조사에 나섰다.
 그는 말도 안 되는 가설을 만들었는데, 가설은 다음과 같다.
