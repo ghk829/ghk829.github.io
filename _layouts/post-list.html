@@ -29,12 +29,12 @@ layout: compress
                             <div><a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></div>
                             <!-- <p>{{ post.excerpt }}</p> -->
                             {% for tag in post.tags %}
-                            <a href="{{ site.url }}tags/#{{tag}}">
+                            <a href="{{ site.url }}/tags/#{{tag}}">
                             <span class="btn"> {{ tag }} </span>
                         </a>
                             {% endfor %}
                             <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
-                            
+
                         </li>
                     </ul>
                         {% endif %}
@@ -44,7 +44,7 @@ layout: compress
         </div>
     </header>
     {% include scripts.html %}
-    <script src="{{ site.url }}/assets/js/wow.min.js"></script>
-    <script type="text/javascript">(new WOW({offset:3})).init();</script>
+<!--    <script src="{{ site.url }}/assets/js/wow.min.js"></script>-->
+<!--    <script type="text/javascript">(new WOW({offset:3})).init();</script>-->
 </body>
 </html>
